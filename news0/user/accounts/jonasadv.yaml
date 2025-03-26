@@ -1,0 +1,11 @@
+state: enabled
+email: felipe@empresarialweb.com.br
+fullname: 'Jonas Stephani'
+title: Advogado
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$g.t9gUU2GOq7u6jXh5eXaOAnDZD0tT2BhBy6NfLrx1Sh9zL4h8ZEO

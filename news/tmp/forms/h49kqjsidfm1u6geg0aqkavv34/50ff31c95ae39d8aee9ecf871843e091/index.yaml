@@ -1,0 +1,31 @@
+form: flex-pages
+id: 'tmp://forms/session/50ff31c95ae39d8aee9ecf871843e091'
+unique_id: 50ff31c95ae39d8aee9ecf871843e091
+url: '/pages/advogado/:add'
+user:
+  username: jonasadv
+  email: felipe@empresarialweb.com.br
+timestamps:
+  created: 1740158271
+  updated: 1740158271
+data: null
+files: {  }
+object:
+  type: pages
+  key: advogado
+  storage_key: ''
+  timestamp: 0
+  serialized:
+    __META: {  }
+    storage_key: ''
+    parent_key: ''
+    order: '04.'
+    folder: advogado
+    template: default
+    lang: ''
+    root: false
+    route: /
+    name: default
+    header:
+      title: Advogado
+    frontmatter: "title: Advogado\n"

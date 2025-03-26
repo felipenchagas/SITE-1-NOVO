@@ -2,11 +2,12 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/user/config/system.yaml',
-    'modified' => 1740078933,
-    'size' => 4582,
+    'modified' => 1742943742,
+    'size' => 4630,
     'data' => [
         'absolute_urls' => false,
         'timezone' => 'America/Sao_Paulo',
+        'default_locale' => NULL,
         'param_sep' => ':',
         'wrapped_site' => false,
         'reverse_proxy_setup' => false,
@@ -32,6 +33,9 @@ return [
             'session_store_active' => false,
             'http_accept_language' => false,
             'override_locale' => false,
+            'content_fallback' => [
+                
+            ],
             'pages_fallback_only' => false,
             'debug' => false
         ],
@@ -44,7 +48,7 @@ return [
             'dirs' => [
                 0 => 'page://'
             ],
-            'theme' => 'quark',
+            'theme' => 'deliver',
             'order' => [
                 'by' => 'default',
                 'dir' => 'asc'

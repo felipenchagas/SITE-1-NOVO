@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/user/plugins/problems/languages.yaml',
-    'modified' => 1740076254,
+    'modified' => 1742576858,
     'size' => 535,
     'data' => [
         'en' => [

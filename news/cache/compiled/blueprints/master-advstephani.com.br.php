@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1740078627,
-    'checksum' => 'be2349519a0913e666e15bd31b72fc64',
+    'timestamp' => 1742943745,
+    'checksum' => 'b6dbf709277ab192b34c4c2386c9a851',
     'files' => [
         'user/plugins/admin/blueprints/config' => [
             'media' => [
@@ -41,6 +41,10 @@ return [
             ]
         ],
         'user/plugins' => [
+            'plugins/themer' => [
+                'file' => 'user/plugins/themer/blueprints.yaml',
+                'modified' => 1468982548
+            ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
                 'modified' => 1740076250
@@ -65,13 +69,17 @@ return [
                 'file' => 'user/plugins/language-selector/blueprints.yaml',
                 'modified' => 1542939398
             ],
+            'plugins/seo' => [
+                'file' => 'user/plugins/seo/blueprints.yaml',
+                'modified' => 1536894020
+            ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/blueprints.yaml',
                 'modified' => 1740076249
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
-                'modified' => 1740076254
+                'modified' => 1742576858
             ],
             'plugins/flex-objects' => [
                 'file' => 'user/plugins/flex-objects/blueprints.yaml',
@@ -81,7 +89,31 @@ return [
         'user/themes' => [
             'themes/quark' => [
                 'file' => 'user/themes/quark/blueprints.yaml',
-                'modified' => 1740076254
+                'modified' => 1742943733
+            ],
+            'themes/appi' => [
+                'file' => 'user/themes/appi/blueprints.yaml',
+                'modified' => 1740152040
+            ],
+            'themes/antimatter' => [
+                'file' => 'user/themes/antimatter/blueprints.yaml',
+                'modified' => 1740154373
+            ],
+            'themes/afterburner2' => [
+                'file' => 'user/themes/afterburner2/blueprints.yaml',
+                'modified' => 1740154854
+            ],
+            'themes/agency' => [
+                'file' => 'user/themes/agency/blueprints.yaml',
+                'modified' => 1740156281
+            ],
+            'themes/bones' => [
+                'file' => 'user/themes/bones/blueprints.yaml',
+                'modified' => 1740157165
+            ],
+            'themes/deliver' => [
+                'file' => 'user/themes/deliver/blueprints.yaml',
+                'modified' => 1740590017
             ]
         ]
     ],
@@ -2928,7 +2960,7 @@ return [
                 'name' => 'system.accounts.avatar',
                 'validation' => 'loose'
             ],
-            'plugins.error' => [
+            'plugins.themer' => [
                 'type' => '_root',
                 'form_field' => false,
                 'form' => [
@@ -2939,6 +2971,39 @@ return [
                 'type' => '_parent',
                 'name' => 'plugins',
                 'form_field' => false
+            ],
+            'plugins.themer.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGINS.THEMER.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.themer.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.themer.templates' => [
+                'type' => 'themeselect',
+                'label' => 'PLUGINS.THEMER.TEMPLATES',
+                'selectize' => true,
+                'multiple' => true,
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.themer.templates',
+                'validation' => 'strict'
+            ],
+            'plugins.error' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
             ],
             'plugins.error.enabled' => [
                 'type' => 'toggle',
@@ -4256,6 +4321,184 @@ return [
                 'name' => 'plugins.language-selector.select_display',
                 'validation' => 'strict'
             ],
+            'plugins.seo' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.seo.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.facebookid' => [
+                'type' => 'text',
+                'label' => 'Facebook App ID',
+                'name' => 'plugins.seo.facebookid',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.twitterid' => [
+                'type' => 'text',
+                'label' => 'Twitter ID',
+                'name' => 'plugins.seo.twitterid',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.twitter_default' => [
+                'type' => 'toggle',
+                'label' => 'On page creation, enable twitter metadata?',
+                'default' => 1,
+                'highlight' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'name' => 'plugins.seo.twitter_default',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.facebook_default' => [
+                'type' => 'toggle',
+                'label' => 'On page creation, enable facebook metadata?',
+                'default' => 1,
+                'highlight' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'name' => 'plugins.seo.facebook_default',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.article' => [
+                'type' => 'toggle',
+                'label' => 'Enable Article Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.article',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.event' => [
+                'type' => 'toggle',
+                'label' => 'Enable Event Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.event',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.restaurant' => [
+                'type' => 'toggle',
+                'label' => 'Enable Restaurant Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.restaurant',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.musicevent' => [
+                'type' => 'toggle',
+                'label' => 'Enable Music Event Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.musicevent',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.person' => [
+                'type' => 'toggle',
+                'label' => 'Enable Person Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.person',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.organization' => [
+                'type' => 'toggle',
+                'label' => 'Enable Organization Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.organization',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.musicalbum' => [
+                'type' => 'toggle',
+                'label' => 'Enable Music Album Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.musicalbum',
+                'validation' => 'strict'
+            ],
+            'plugins.seo.product' => [
+                'type' => 'toggle',
+                'label' => 'Enable Product Microdata',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.seo.product',
+                'validation' => 'strict'
+            ],
             'plugins.admin' => [
                 'type' => '_root',
                 'form_field' => false,
@@ -5287,7 +5530,7 @@ return [
             ],
             'themes.quark.production-mode' => [
                 'type' => 'toggle',
-                'label' => 'Production mode',
+                'label' => 'THEME_QUARK.ADMIN.PRODUCTION_MODE',
                 'highlight' => 1,
                 'default' => 1,
                 'options' => [
@@ -5305,10 +5548,10 @@ return [
                 'label' => 'THEME_QUARK.ADMIN.GRID_SIZE',
                 'size' => 'small',
                 'options' => [
-                    '' => 'None (full width)',
-                    'grid-xl' => 'Extra Large',
-                    'grid-lg' => 'Large',
-                    'grid-md' => 'Medium'
+                    '' => 'THEME_QUARK.ADMIN.GRID_SIZE_NONE',
+                    'grid-xl' => 'THEME_QUARK.ADMIN.GRID_SIZE_EXTRA_LARGE',
+                    'grid-lg' => 'THEME_QUARK.ADMIN.GRID_SIZE_LARGE',
+                    'grid-md' => 'THEME_QUARK.ADMIN.GRID_SIZE_MEDIUM'
                 ],
                 'name' => 'themes.quark.grid-size',
                 'validation' => 'loose'
@@ -5320,12 +5563,12 @@ return [
                     'type' => 'ignore'
                 ],
                 'type' => 'file',
-                'label' => 'Custom Logo',
+                'label' => 'THEME_QUARK.ADMIN.CUSTOM_LOGO',
                 'size' => 'large',
                 'destination' => 'theme://images/logo',
                 'multiple' => false,
                 'markdown' => true,
-                'description' => 'Will be used instead of default logo `theme://images/grav-logo.svg`',
+                'description' => 'THEME_QUARK.ADMIN.CUSTOM_LOGO_DESCRIPTION',
                 'accept' => [
                     0 => 'image/*'
                 ],
@@ -5339,7 +5582,7 @@ return [
                     'type' => 'ignore'
                 ],
                 'type' => 'file',
-                'label' => 'Mobile Custom Logo',
+                'label' => 'THEME_QUARK.ADMIN.CUSTOM_LOGO_MOBILE',
                 'size' => 'large',
                 'destination' => 'theme://images/logo',
                 'multiple' => false,
@@ -5351,7 +5594,7 @@ return [
             ],
             'themes.quark.header-fixed' => [
                 'type' => 'toggle',
-                'label' => 'Fixed header',
+                'label' => 'THEME_QUARK.ADMIN.HEADER_FIXED',
                 'highlight' => 1,
                 'default' => 1,
                 'options' => [
@@ -5366,7 +5609,7 @@ return [
             ],
             'themes.quark.header-animated' => [
                 'type' => 'toggle',
-                'label' => 'Animated',
+                'label' => 'THEME_QUARK.ADMIN.HEADER_ANIMATED',
                 'highlight' => 1,
                 'default' => 1,
                 'options' => [
@@ -5381,7 +5624,7 @@ return [
             ],
             'themes.quark.header-dark' => [
                 'type' => 'toggle',
-                'label' => 'Dark Style',
+                'label' => 'THEME_QUARK.ADMIN.HEADER_DARK',
                 'highlight' => 0,
                 'default' => 0,
                 'options' => [
@@ -5396,7 +5639,7 @@ return [
             ],
             'themes.quark.header-transparent' => [
                 'type' => 'toggle',
-                'label' => 'Transparent',
+                'label' => 'THEME_QUARK.ADMIN.HEADER_TRANSPARENT',
                 'highlight' => 0,
                 'default' => 0,
                 'options' => [
@@ -5411,7 +5654,7 @@ return [
             ],
             'themes.quark.sticky-footer' => [
                 'type' => 'toggle',
-                'label' => 'Sticky footer',
+                'label' => 'THEME_QUARK.ADMIN.STICKY_FOOTER',
                 'highlight' => 1,
                 'default' => 1,
                 'options' => [
@@ -5426,7 +5669,7 @@ return [
             ],
             'themes.quark.blog-page' => [
                 'type' => 'text',
-                'label' => 'Blog Page',
+                'label' => 'THEME_QUARK.ADMIN.BLOG_PAGE',
                 'size' => 'medium',
                 'default' => '/blog',
                 'name' => 'themes.quark.blog-page',
@@ -5439,7 +5682,7 @@ return [
             ],
             'themes.quark.spectre.exp' => [
                 'type' => 'toggle',
-                'label' => 'Experimentals CSS',
+                'label' => 'THEME_QUARK.ADMIN.SPECTRE_EXP',
                 'highlight' => 0,
                 'default' => 0,
                 'options' => [
@@ -5454,7 +5697,7 @@ return [
             ],
             'themes.quark.spectre.icons' => [
                 'type' => 'toggle',
-                'label' => 'Icons CSS',
+                'label' => 'THEME_QUARK.ADMIN.SPECTRE_ICONS',
                 'highlight' => 0,
                 'default' => 0,
                 'options' => [
@@ -5466,6 +5709,1638 @@ return [
                 ],
                 'name' => 'themes.quark.spectre.icons',
                 'validation' => 'loose'
+            ],
+            'themes.appi' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'themes.appi.copyright' => [
+                'type' => 'textarea',
+                'label' => 'Copyright Text',
+                'name' => 'themes.appi.copyright',
+                'validation' => 'loose'
+            ],
+            'themes.appi.favicon' => [
+                'type' => 'text',
+                'label' => 'favicon',
+                'name' => 'themes.appi.favicon',
+                'validation' => 'loose'
+            ],
+            'themes.antimatter' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'themes.antimatter.dropdown' => [
+                'type' => '_parent',
+                'name' => 'themes.antimatter.dropdown',
+                'form_field' => false
+            ],
+            'themes.antimatter.dropdown.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown in navbar',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.antimatter.dropdown.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.afterburner2' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'themes.afterburner2.dropdown' => [
+                'type' => '_parent',
+                'name' => 'themes.afterburner2.dropdown',
+                'form_field' => false
+            ],
+            'themes.afterburner2.dropdown.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown in navbar',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.afterburner2.dropdown.enabled',
+                'validation' => 'strict'
+            ],
+            'themes.agency' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'themes.agency.dropdown' => [
+                'type' => '_parent',
+                'name' => 'themes.agency.dropdown',
+                'form_field' => false
+            ],
+            'themes.agency.dropdown.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown in navbar',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.agency.dropdown.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.agency.color' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Color',
+                'default' => 'blue',
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'themes.agency.color',
+                'validation' => 'loose'
+            ],
+            'themes.bones' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'themes.bones.site_title' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.site_title',
+                'form_field' => false
+            ],
+            'themes.bones.site_title.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Site Title in Logo',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.site_title.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.google_fonts_logo' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.google_fonts_logo',
+                'form_field' => false
+            ],
+            'themes.bones.google_fonts_logo.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Google Fonts for Logo',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.google_fonts_logo.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.fontawesome' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.fontawesome',
+                'form_field' => false
+            ],
+            'themes.bones.fontawesome.enabled' => [
+                'type' => 'toggle',
+                'label' => 'FontAwesome',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.fontawesome.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.animate_css' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.animate_css',
+                'form_field' => false
+            ],
+            'themes.bones.animate_css.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Animate CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.animate_css.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.wow_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.wow_js',
+                'form_field' => false
+            ],
+            'themes.bones.wow_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'WOW js',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.wow_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.google_prettify' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.google_prettify',
+                'form_field' => false
+            ],
+            'themes.bones.google_prettify.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Google Prettify Code',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.google_prettify.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.dropdown' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.dropdown',
+                'form_field' => false
+            ],
+            'themes.bones.dropdown.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown in Mainmenu',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.dropdown.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.mobilemenu_breakpoint' => [
+                'type' => 'select',
+                'label' => 'Mobile Menu Breakpoint',
+                'classes' => 'fancy',
+                'size' => 'small',
+                'default' => 'medium',
+                'options' => [
+                    'large' => 'Large',
+                    'medium' => 'Medium',
+                    'all' => 'Mobile for All'
+                ],
+                'name' => 'themes.bones.mobilemenu_breakpoint',
+                'validation' => 'loose'
+            ],
+            'themes.bones.mobilemenu_position' => [
+                'type' => 'select',
+                'label' => 'Mobile Menu Position',
+                'classes' => 'fancy',
+                'size' => 'small',
+                'default' => 'left',
+                'options' => [
+                    'left' => 'left',
+                    'right' => 'right'
+                ],
+                'name' => 'themes.bones.mobilemenu_position',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_abide_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_abide_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_abide_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'abide',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_abide_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_accordion_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_accordion_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_accordion_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'accordion',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_accordion_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_accordionMenu_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_accordionMenu_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_accordionMenu_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'accordionMenu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_accordionMenu_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_drilldown_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_drilldown_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_drilldown_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'drilldown',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_drilldown_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_dropdown_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_dropdown_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_dropdown_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'dropdown',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_dropdown_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_dropdownMenu_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_dropdownMenu_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_dropdownMenu_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'dropdownMenu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_dropdownMenu_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_equalizer_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_equalizer_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_equalizer_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'equalizer',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_equalizer_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_interchange_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_interchange_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_interchange_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'interchange',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_interchange_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_magellan_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_magellan_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_magellan_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'magellan',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_magellan_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_offcanvas_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_offcanvas_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_offcanvas_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'offcanvas',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_offcanvas_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_orbit_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_orbit_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_orbit_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'orbit',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_orbit_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_responsiveMenu_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_responsiveMenu_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_responsiveMenu_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'responsiveMenu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_responsiveMenu_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_responsiveToggle_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_responsiveToggle_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_responsiveToggle_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'responsiveToggle',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_responsiveToggle_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_reveal_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_reveal_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_reveal_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'reveal',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_reveal_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_slider_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_slider_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_slider_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'slider',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_slider_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_sticky_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_sticky_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_sticky_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'sticky',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_sticky_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_tabs_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_tabs_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_tabs_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'tabs',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_tabs_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_toggler_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_toggler_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_toggler_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'toggler',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_toggler_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_tooltip_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_tooltip_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_tooltip_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'tooltip',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_tooltip_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_box_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_box_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_box_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util box',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_box_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_keyboard_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_keyboard_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_keyboard_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util keyboard',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_keyboard_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_mediaQuery_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_mediaQuery_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_mediaQuery_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util mediaQuery',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_mediaQuery_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_motion_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_motion_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_motion_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util motion',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_motion_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_nest_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_nest_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_nest_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util nest',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_nest_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_timerAndImageLoader_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_timerAndImageLoader_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_timerAndImageLoader_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util timerAndImageLoader',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_timerAndImageLoader_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_touch_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_touch_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_touch_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util touch',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_touch_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.foundation_util_triggers_js' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.foundation_util_triggers_js',
+                'form_field' => false
+            ],
+            'themes.bones.foundation_util_triggers_js.enabled' => [
+                'type' => 'toggle',
+                'label' => 'util triggers',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.foundation_util_triggers_js.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_bones' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_bones',
+                'form_field' => false
+            ],
+            'themes.bones.css_bones.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Bones',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_bones.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_custom' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_custom',
+                'form_field' => false
+            ],
+            'themes.bones.css_custom.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Custom',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_custom.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_global_styles' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_global_styles',
+                'form_field' => false
+            ],
+            'themes.bones.css_global_styles.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Global Styles',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_global_styles.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_grid' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_grid',
+                'form_field' => false
+            ],
+            'themes.bones.css_grid.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Grid',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_grid.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_flex_grid' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_flex_grid',
+                'form_field' => false
+            ],
+            'themes.bones.css_flex_grid.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Flex Grid',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_flex_grid.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_typography' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_typography',
+                'form_field' => false
+            ],
+            'themes.bones.css_typography.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Typography',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_typography.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_button' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_button',
+                'form_field' => false
+            ],
+            'themes.bones.css_button.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_button.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_forms' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_forms',
+                'form_field' => false
+            ],
+            'themes.bones.css_forms.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Forms',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_forms.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_visibility_classes' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_visibility_classes',
+                'form_field' => false
+            ],
+            'themes.bones.css_visibility_classes.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Visibility Classes',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_visibility_classes.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_float_classes' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_float_classes',
+                'form_field' => false
+            ],
+            'themes.bones.css_float_classes.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Float Classes',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_float_classes.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_accordion' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_accordion',
+                'form_field' => false
+            ],
+            'themes.bones.css_accordion.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Accordion',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_accordion.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_accordion_menu' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_accordion_menu',
+                'form_field' => false
+            ],
+            'themes.bones.css_accordion_menu.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Accordion Menu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_accordion_menu.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_badge' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_badge',
+                'form_field' => false
+            ],
+            'themes.bones.css_badge.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Badge',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_badge.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_breadcrumbs' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_breadcrumbs',
+                'form_field' => false
+            ],
+            'themes.bones.css_breadcrumbs.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Breadcrumbs',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_breadcrumbs.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_button_group' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_button_group',
+                'form_field' => false
+            ],
+            'themes.bones.css_button_group.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Button Group',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_button_group.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_callout' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_callout',
+                'form_field' => false
+            ],
+            'themes.bones.css_callout.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Callout',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_callout.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_close_button' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_close_button',
+                'form_field' => false
+            ],
+            'themes.bones.css_close_button.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Close Button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_close_button.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_drilldown_menu' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_drilldown_menu',
+                'form_field' => false
+            ],
+            'themes.bones.css_drilldown_menu.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Drilldown Menu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_drilldown_menu.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_dropdown' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_dropdown',
+                'form_field' => false
+            ],
+            'themes.bones.css_dropdown.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_dropdown.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_dropdown_menu' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_dropdown_menu',
+                'form_field' => false
+            ],
+            'themes.bones.css_dropdown_menu.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Dropdown Menu',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_dropdown_menu.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_flex_video' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_flex_video',
+                'form_field' => false
+            ],
+            'themes.bones.css_flex_video.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Flex Video',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_flex_video.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_label' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_label',
+                'form_field' => false
+            ],
+            'themes.bones.css_label.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Label',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_label.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_media_object' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_media_object',
+                'form_field' => false
+            ],
+            'themes.bones.css_media_object.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Media Object',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_media_object.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_menu' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_menu',
+                'form_field' => false
+            ],
+            'themes.bones.css_menu.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Menu',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_menu.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_off_canvas' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_off_canvas',
+                'form_field' => false
+            ],
+            'themes.bones.css_off_canvas.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Off Canvas',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_off_canvas.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_orbit' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_orbit',
+                'form_field' => false
+            ],
+            'themes.bones.css_orbit.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Orbit',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_orbit.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_pagination' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_pagination',
+                'form_field' => false
+            ],
+            'themes.bones.css_pagination.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Pagination',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_pagination.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_progress_bar' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_progress_bar',
+                'form_field' => false
+            ],
+            'themes.bones.css_progress_bar.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Progress Bar',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_progress_bar.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_slider' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_slider',
+                'form_field' => false
+            ],
+            'themes.bones.css_slider.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Slider',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_slider.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_sticky' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_sticky',
+                'form_field' => false
+            ],
+            'themes.bones.css_sticky.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Sticky',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_sticky.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_reveal' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_reveal',
+                'form_field' => false
+            ],
+            'themes.bones.css_reveal.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Reveal',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_reveal.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_switch' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_switch',
+                'form_field' => false
+            ],
+            'themes.bones.css_switch.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Switch',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_switch.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_table' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_table',
+                'form_field' => false
+            ],
+            'themes.bones.css_table.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Table',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_table.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_tabs' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_tabs',
+                'form_field' => false
+            ],
+            'themes.bones.css_tabs.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Tabs',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_tabs.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_thumbnail' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_thumbnail',
+                'form_field' => false
+            ],
+            'themes.bones.css_thumbnail.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Thumbnail',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_thumbnail.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_title_bar' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_title_bar',
+                'form_field' => false
+            ],
+            'themes.bones.css_title_bar.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Title Bar',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_title_bar.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_tooltip' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_tooltip',
+                'form_field' => false
+            ],
+            'themes.bones.css_tooltip.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Tooltip',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_tooltip.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_top_bar' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_top_bar',
+                'form_field' => false
+            ],
+            'themes.bones.css_top_bar.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Top Bar',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_top_bar.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_ui_transitions' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_ui_transitions',
+                'form_field' => false
+            ],
+            'themes.bones.css_ui_transitions.enabled' => [
+                'type' => 'toggle',
+                'label' => 'UI Transitions',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_ui_transitions.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.bones.css_ui_animations' => [
+                'type' => '_parent',
+                'name' => 'themes.bones.css_ui_animations',
+                'form_field' => false
+            ],
+            'themes.bones.css_ui_animations.enabled' => [
+                'type' => 'toggle',
+                'label' => 'UI Animations',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'themes.bones.css_ui_animations.enabled',
+                'validation' => 'loose'
+            ],
+            'themes.deliver' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
             ]
         ],
         'rules' => [
@@ -5788,6 +7663,10 @@ return [
                 ]
             ],
             'plugins' => [
+                'themer' => [
+                    'enabled' => 'plugins.themer.enabled',
+                    'templates' => 'plugins.themer.templates'
+                ],
                 'error' => [
                     'enabled' => 'plugins.error.enabled',
                     'routes' => [
@@ -5931,6 +7810,21 @@ return [
                     'button_display' => 'plugins.language-selector.button_display',
                     'select_display' => 'plugins.language-selector.select_display'
                 ],
+                'seo' => [
+                    'enabled' => 'plugins.seo.enabled',
+                    'facebookid' => 'plugins.seo.facebookid',
+                    'twitterid' => 'plugins.seo.twitterid',
+                    'twitter_default' => 'plugins.seo.twitter_default',
+                    'facebook_default' => 'plugins.seo.facebook_default',
+                    'article' => 'plugins.seo.article',
+                    'event' => 'plugins.seo.event',
+                    'restaurant' => 'plugins.seo.restaurant',
+                    'musicevent' => 'plugins.seo.musicevent',
+                    'person' => 'plugins.seo.person',
+                    'organization' => 'plugins.seo.organization',
+                    'musicalbum' => 'plugins.seo.musicalbum',
+                    'product' => 'plugins.seo.product'
+                ],
                 'admin' => [
                     'enabled' => 'plugins.admin.enabled',
                     'cache_enabled' => 'plugins.admin.cache_enabled',
@@ -6069,7 +7963,254 @@ return [
                         'exp' => 'themes.quark.spectre.exp',
                         'icons' => 'themes.quark.spectre.icons'
                     ]
-                ]
+                ],
+                'appi' => [
+                    'copyright' => 'themes.appi.copyright',
+                    'favicon' => 'themes.appi.favicon'
+                ],
+                'antimatter' => [
+                    'dropdown' => [
+                        'enabled' => 'themes.antimatter.dropdown.enabled'
+                    ]
+                ],
+                'afterburner2' => [
+                    'dropdown' => [
+                        'enabled' => 'themes.afterburner2.dropdown.enabled'
+                    ]
+                ],
+                'agency' => [
+                    'dropdown' => [
+                        'enabled' => 'themes.agency.dropdown.enabled'
+                    ],
+                    'color' => 'themes.agency.color'
+                ],
+                'bones' => [
+                    'site_title' => [
+                        'enabled' => 'themes.bones.site_title.enabled'
+                    ],
+                    'google_fonts_logo' => [
+                        'enabled' => 'themes.bones.google_fonts_logo.enabled'
+                    ],
+                    'fontawesome' => [
+                        'enabled' => 'themes.bones.fontawesome.enabled'
+                    ],
+                    'animate_css' => [
+                        'enabled' => 'themes.bones.animate_css.enabled'
+                    ],
+                    'wow_js' => [
+                        'enabled' => 'themes.bones.wow_js.enabled'
+                    ],
+                    'google_prettify' => [
+                        'enabled' => 'themes.bones.google_prettify.enabled'
+                    ],
+                    'dropdown' => [
+                        'enabled' => 'themes.bones.dropdown.enabled'
+                    ],
+                    'mobilemenu_breakpoint' => 'themes.bones.mobilemenu_breakpoint',
+                    'mobilemenu_position' => 'themes.bones.mobilemenu_position',
+                    'foundation_abide_js' => [
+                        'enabled' => 'themes.bones.foundation_abide_js.enabled'
+                    ],
+                    'foundation_accordion_js' => [
+                        'enabled' => 'themes.bones.foundation_accordion_js.enabled'
+                    ],
+                    'foundation_accordionMenu_js' => [
+                        'enabled' => 'themes.bones.foundation_accordionMenu_js.enabled'
+                    ],
+                    'foundation_drilldown_js' => [
+                        'enabled' => 'themes.bones.foundation_drilldown_js.enabled'
+                    ],
+                    'foundation_dropdown_js' => [
+                        'enabled' => 'themes.bones.foundation_dropdown_js.enabled'
+                    ],
+                    'foundation_dropdownMenu_js' => [
+                        'enabled' => 'themes.bones.foundation_dropdownMenu_js.enabled'
+                    ],
+                    'foundation_equalizer_js' => [
+                        'enabled' => 'themes.bones.foundation_equalizer_js.enabled'
+                    ],
+                    'foundation_interchange_js' => [
+                        'enabled' => 'themes.bones.foundation_interchange_js.enabled'
+                    ],
+                    'foundation_magellan_js' => [
+                        'enabled' => 'themes.bones.foundation_magellan_js.enabled'
+                    ],
+                    'foundation_offcanvas_js' => [
+                        'enabled' => 'themes.bones.foundation_offcanvas_js.enabled'
+                    ],
+                    'foundation_orbit_js' => [
+                        'enabled' => 'themes.bones.foundation_orbit_js.enabled'
+                    ],
+                    'foundation_responsiveMenu_js' => [
+                        'enabled' => 'themes.bones.foundation_responsiveMenu_js.enabled'
+                    ],
+                    'foundation_responsiveToggle_js' => [
+                        'enabled' => 'themes.bones.foundation_responsiveToggle_js.enabled'
+                    ],
+                    'foundation_reveal_js' => [
+                        'enabled' => 'themes.bones.foundation_reveal_js.enabled'
+                    ],
+                    'foundation_slider_js' => [
+                        'enabled' => 'themes.bones.foundation_slider_js.enabled'
+                    ],
+                    'foundation_sticky_js' => [
+                        'enabled' => 'themes.bones.foundation_sticky_js.enabled'
+                    ],
+                    'foundation_tabs_js' => [
+                        'enabled' => 'themes.bones.foundation_tabs_js.enabled'
+                    ],
+                    'foundation_toggler_js' => [
+                        'enabled' => 'themes.bones.foundation_toggler_js.enabled'
+                    ],
+                    'foundation_tooltip_js' => [
+                        'enabled' => 'themes.bones.foundation_tooltip_js.enabled'
+                    ],
+                    'foundation_util_box_js' => [
+                        'enabled' => 'themes.bones.foundation_util_box_js.enabled'
+                    ],
+                    'foundation_util_keyboard_js' => [
+                        'enabled' => 'themes.bones.foundation_util_keyboard_js.enabled'
+                    ],
+                    'foundation_util_mediaQuery_js' => [
+                        'enabled' => 'themes.bones.foundation_util_mediaQuery_js.enabled'
+                    ],
+                    'foundation_util_motion_js' => [
+                        'enabled' => 'themes.bones.foundation_util_motion_js.enabled'
+                    ],
+                    'foundation_util_nest_js' => [
+                        'enabled' => 'themes.bones.foundation_util_nest_js.enabled'
+                    ],
+                    'foundation_util_timerAndImageLoader_js' => [
+                        'enabled' => 'themes.bones.foundation_util_timerAndImageLoader_js.enabled'
+                    ],
+                    'foundation_util_touch_js' => [
+                        'enabled' => 'themes.bones.foundation_util_touch_js.enabled'
+                    ],
+                    'foundation_util_triggers_js' => [
+                        'enabled' => 'themes.bones.foundation_util_triggers_js.enabled'
+                    ],
+                    'css_bones' => [
+                        'enabled' => 'themes.bones.css_bones.enabled'
+                    ],
+                    'css_custom' => [
+                        'enabled' => 'themes.bones.css_custom.enabled'
+                    ],
+                    'css_global_styles' => [
+                        'enabled' => 'themes.bones.css_global_styles.enabled'
+                    ],
+                    'css_grid' => [
+                        'enabled' => 'themes.bones.css_grid.enabled'
+                    ],
+                    'css_flex_grid' => [
+                        'enabled' => 'themes.bones.css_flex_grid.enabled'
+                    ],
+                    'css_typography' => [
+                        'enabled' => 'themes.bones.css_typography.enabled'
+                    ],
+                    'css_button' => [
+                        'enabled' => 'themes.bones.css_button.enabled'
+                    ],
+                    'css_forms' => [
+                        'enabled' => 'themes.bones.css_forms.enabled'
+                    ],
+                    'css_visibility_classes' => [
+                        'enabled' => 'themes.bones.css_visibility_classes.enabled'
+                    ],
+                    'css_float_classes' => [
+                        'enabled' => 'themes.bones.css_float_classes.enabled'
+                    ],
+                    'css_accordion' => [
+                        'enabled' => 'themes.bones.css_accordion.enabled'
+                    ],
+                    'css_accordion_menu' => [
+                        'enabled' => 'themes.bones.css_accordion_menu.enabled'
+                    ],
+                    'css_badge' => [
+                        'enabled' => 'themes.bones.css_badge.enabled'
+                    ],
+                    'css_breadcrumbs' => [
+                        'enabled' => 'themes.bones.css_breadcrumbs.enabled'
+                    ],
+                    'css_button_group' => [
+                        'enabled' => 'themes.bones.css_button_group.enabled'
+                    ],
+                    'css_callout' => [
+                        'enabled' => 'themes.bones.css_callout.enabled'
+                    ],
+                    'css_close_button' => [
+                        'enabled' => 'themes.bones.css_close_button.enabled'
+                    ],
+                    'css_drilldown_menu' => [
+                        'enabled' => 'themes.bones.css_drilldown_menu.enabled'
+                    ],
+                    'css_dropdown' => [
+                        'enabled' => 'themes.bones.css_dropdown.enabled'
+                    ],
+                    'css_dropdown_menu' => [
+                        'enabled' => 'themes.bones.css_dropdown_menu.enabled'
+                    ],
+                    'css_flex_video' => [
+                        'enabled' => 'themes.bones.css_flex_video.enabled'
+                    ],
+                    'css_label' => [
+                        'enabled' => 'themes.bones.css_label.enabled'
+                    ],
+                    'css_media_object' => [
+                        'enabled' => 'themes.bones.css_media_object.enabled'
+                    ],
+                    'css_menu' => [
+                        'enabled' => 'themes.bones.css_menu.enabled'
+                    ],
+                    'css_off_canvas' => [
+                        'enabled' => 'themes.bones.css_off_canvas.enabled'
+                    ],
+                    'css_orbit' => [
+                        'enabled' => 'themes.bones.css_orbit.enabled'
+                    ],
+                    'css_pagination' => [
+                        'enabled' => 'themes.bones.css_pagination.enabled'
+                    ],
+                    'css_progress_bar' => [
+                        'enabled' => 'themes.bones.css_progress_bar.enabled'
+                    ],
+                    'css_slider' => [
+                        'enabled' => 'themes.bones.css_slider.enabled'
+                    ],
+                    'css_sticky' => [
+                        'enabled' => 'themes.bones.css_sticky.enabled'
+                    ],
+                    'css_reveal' => [
+                        'enabled' => 'themes.bones.css_reveal.enabled'
+                    ],
+                    'css_switch' => [
+                        'enabled' => 'themes.bones.css_switch.enabled'
+                    ],
+                    'css_table' => [
+                        'enabled' => 'themes.bones.css_table.enabled'
+                    ],
+                    'css_tabs' => [
+                        'enabled' => 'themes.bones.css_tabs.enabled'
+                    ],
+                    'css_thumbnail' => [
+                        'enabled' => 'themes.bones.css_thumbnail.enabled'
+                    ],
+                    'css_title_bar' => [
+                        'enabled' => 'themes.bones.css_title_bar.enabled'
+                    ],
+                    'css_tooltip' => [
+                        'enabled' => 'themes.bones.css_tooltip.enabled'
+                    ],
+                    'css_top_bar' => [
+                        'enabled' => 'themes.bones.css_top_bar.enabled'
+                    ],
+                    'css_ui_transitions' => [
+                        'enabled' => 'themes.bones.css_ui_transitions.enabled'
+                    ],
+                    'css_ui_animations' => [
+                        'enabled' => 'themes.bones.css_ui_animations.enabled'
+                    ]
+                ],
+                'deliver' => 'themes.deliver'
             ]
         ],
         'dynamic' => [

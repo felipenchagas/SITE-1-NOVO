@@ -2,33 +2,23 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/user/data/notifications/60c6d854e3ef68373fe7cb0f49a9c040.yaml',
-    'modified' => 1740077587,
-    'size' => 8191,
+    'modified' => 1742943707,
+    'size' => 7911,
     'data' => [
-        'last_checked' => 1740077587,
+        'last_checked' => 1742943707,
         'data' => [
             'feed' => [
                 0 => [
-                    'id' => 324,
-                    'date' => '2025-02-03 11:40',
-                    'message' => '🗳️ Nominations Successful! Now please <b>VOTE</b> for "Grav" in the 2024 CMS Critic Awards!',
-                    'link' => 'https://cmscritic.com/vote',
+                    'id' => 32,
+                    'date' => '2025-03-01 11:40',
+                    'message' => 'Help Grav achieve 15k stars on GitHub! ⭐️ it today!',
+                    'link' => 'https://github.com/getgrav/grav',
                     'type' => 'note',
                     'location' => [
                         0 => 'feed'
                     ]
                 ],
                 1 => [
-                    'id' => 32,
-                    'date' => '2025-01-18 11:40',
-                    'message' => '🏆 Only a week left to <b>Nominate</b> "Grav CMS" in the 2024 CMS Critic Awards!',
-                    'link' => 'https://cmscritic.com/nominate',
-                    'type' => 'note',
-                    'location' => [
-                        0 => 'feed'
-                    ]
-                ],
-                2 => [
                     'id' => 31,
                     'date' => '2024-02-13 11:40',
                     'message' => '🗜️Optimize your Grav site with Image Optimize',
@@ -38,7 +28,7 @@ return [
                         0 => 'feed'
                     ]
                 ],
-                3 => [
+                2 => [
                     'id' => 26,
                     'date' => '2024-02-10 00:01',
                     'message' => '🚀 Grav Premium Plugins and Themes available. Turbo-charge your Grav site today.',
@@ -48,7 +38,7 @@ return [
                         0 => 'feed'
                     ]
                 ],
-                4 => [
+                3 => [
                     'id' => 12,
                     'date' => '2024-01-17 15:15',
                     'message' => '☕️ Support Grav for the price of a <span class=\'fa fa-coffee\'></span> a month!',
@@ -58,7 +48,7 @@ return [
                         0 => 'feed'
                     ]
                 ],
-                5 => [
+                4 => [
                     'id' => 23,
                     'date' => '2024-01-05 15:50',
                     'message' => '🙊 Grav community chat has moved from Slack to <span class=\'fa fa-comments\'></span> Discord',
@@ -68,7 +58,7 @@ return [
                         0 => 'feed'
                     ]
                 ],
-                6 => [
+                5 => [
                     'id' => 24,
                     'date' => '2024-01-05 11:27',
                     'message' => '🙏 Thanks to our amazing community, Grav was voted <b>Best Flat File CMS</b> in the 2019 CMS Critics\' Awards!',
@@ -78,7 +68,7 @@ return [
                         0 => 'feed'
                     ]
                 ],
-                7 => [
+                6 => [
                     'id' => 2,
                     'date' => '2024-01-05 02:23',
                     'message' => '🎖 Don\'t forget to star Grav on GitHub!',

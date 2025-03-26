@@ -2,19 +2,19 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/user/plugins/problems/blueprints.yaml',
-    'modified' => 1740076254,
-    'size' => 1005,
+    'modified' => 1742576858,
+    'size' => 1006,
     'data' => [
         'name' => 'Problems',
         'slug' => 'problems',
         'type' => 'plugin',
-        'version' => '2.1.2',
+        'version' => '2.2.2',
         'description' => 'Detects and reports problems found in the site.',
         'icon' => 'exclamation-circle',
         'author' => [
             'name' => 'Team Grav',
             'email' => 'devs@getgrav.org',
-            'url' => 'http://getgrav.org'
+            'url' => 'https://getgrav.org'
         ],
         'homepage' => 'https://github.com/getgrav/grav-plugin-problems',
         'keywords' => 'problems, plugin, detector, assistant, required',

@@ -2,17 +2,17 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/system/languages/en.yaml',
-    'modified' => 1740076197,
-    'size' => 3943,
+    'modified' => 1740589847,
+    'size' => 3697,
     'data' => [
         'GRAV' => [
             'FRONTMATTER_ERROR_PAGE' => '---
 title: %1$s
 ---
 
-# Error: Invalid Frontmatter
+# Erro: Frontmatter Inválido
 
-Path: `%2$s`
+Caminho: `%2$s`
 
 **%3$s**
 
@@ -76,103 +76,103 @@ Path: `%2$s`
                 7 => 'sheep'
             ],
             'INFLECTOR_IRREGULAR' => [
-                'person' => 'people',
-                'man' => 'men',
-                'child' => 'children',
-                'sex' => 'sexes',
-                'move' => 'moves'
+                'person' => 'pessoas',
+                'man' => 'homens',
+                'child' => 'crianças',
+                'sex' => 'sexos',
+                'move' => 'movimentos'
             ],
             'INFLECTOR_ORDINALS' => [
-                'default' => 'th',
-                'first' => 'st',
-                'second' => 'nd',
-                'third' => 'rd'
+                'default' => 'º',
+                'first' => 'º',
+                'second' => 'º',
+                'third' => 'º'
             ],
             'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'No date provided',
-                'BAD_DATE' => 'Bad date',
-                'AGO' => 'ago',
-                'FROM_NOW' => 'from now',
-                'JUST_NOW' => 'just now',
-                'SECOND' => 'second',
-                'MINUTE' => 'minute',
-                'HOUR' => 'hour',
-                'DAY' => 'day',
-                'WEEK' => 'week',
-                'MONTH' => 'month',
-                'YEAR' => 'year',
-                'DECADE' => 'decade',
-                'SEC' => 'sec',
+                'NO_DATE_PROVIDED' => 'Nenhuma data fornecida',
+                'BAD_DATE' => 'Data inválida',
+                'AGO' => 'atrás',
+                'FROM_NOW' => 'daqui a',
+                'JUST_NOW' => 'agora mesmo',
+                'SECOND' => 'segundo',
+                'MINUTE' => 'minuto',
+                'HOUR' => 'hora',
+                'DAY' => 'dia',
+                'WEEK' => 'semana',
+                'MONTH' => 'mês',
+                'YEAR' => 'ano',
+                'DECADE' => 'década',
+                'SEC' => 'seg',
                 'MIN' => 'min',
-                'HR' => 'hr',
-                'WK' => 'wk',
-                'MO' => 'mo',
-                'YR' => 'yr',
+                'HR' => 'h',
+                'WK' => 'sem',
+                'MO' => 'mês',
+                'YR' => 'ano',
                 'DEC' => 'dec',
-                'SECOND_PLURAL' => 'seconds',
-                'MINUTE_PLURAL' => 'minutes',
-                'HOUR_PLURAL' => 'hours',
-                'DAY_PLURAL' => 'days',
-                'WEEK_PLURAL' => 'weeks',
-                'MONTH_PLURAL' => 'months',
-                'YEAR_PLURAL' => 'years',
-                'DECADE_PLURAL' => 'decades',
-                'SEC_PLURAL' => 'secs',
+                'SECOND_PLURAL' => 'segundos',
+                'MINUTE_PLURAL' => 'minutos',
+                'HOUR_PLURAL' => 'horas',
+                'DAY_PLURAL' => 'dias',
+                'WEEK_PLURAL' => 'semanas',
+                'MONTH_PLURAL' => 'meses',
+                'YEAR_PLURAL' => 'anos',
+                'DECADE_PLURAL' => 'décadas',
+                'SEC_PLURAL' => 'segs',
                 'MIN_PLURAL' => 'mins',
                 'HR_PLURAL' => 'hrs',
-                'WK_PLURAL' => 'wks',
-                'MO_PLURAL' => 'mos',
-                'YR_PLURAL' => 'yrs',
+                'WK_PLURAL' => 'sems',
+                'MO_PLURAL' => 'meses',
+                'YR_PLURAL' => 'anos',
                 'DEC_PLURAL' => 'decs'
             ],
             'FORM' => [
-                'VALIDATION_FAIL' => '<b>Validation failed:</b>',
-                'INVALID_INPUT' => 'Invalid input in',
-                'MISSING_REQUIRED_FIELD' => 'Missing required field:',
-                'XSS_ISSUES' => 'Potential XSS issues detected in \'%s\' field'
+                'VALIDATION_FAIL' => '<b>Validação falhou:</b>',
+                'INVALID_INPUT' => 'Entrada inválida em',
+                'MISSING_REQUIRED_FIELD' => 'Campo obrigatório ausente:',
+                'XSS_ISSUES' => 'Possíveis problemas de XSS detectados no campo \'%s\''
             ],
             'MONTHS_OF_THE_YEAR' => [
-                0 => 'January',
-                1 => 'February',
-                2 => 'March',
-                3 => 'April',
-                4 => 'May',
-                5 => 'June',
-                6 => 'July',
-                7 => 'August',
-                8 => 'September',
-                9 => 'October',
-                10 => 'November',
-                11 => 'December'
+                0 => 'Janeiro',
+                1 => 'Fevereiro',
+                2 => 'Março',
+                3 => 'Abril',
+                4 => 'Maio',
+                5 => 'Junho',
+                6 => 'Julho',
+                7 => 'Agosto',
+                8 => 'Setembro',
+                9 => 'Outubro',
+                10 => 'Novembro',
+                11 => 'Dezembro'
             ],
             'DAYS_OF_THE_WEEK' => [
-                0 => 'Monday',
-                1 => 'Tuesday',
-                2 => 'Wednesday',
-                3 => 'Thursday',
-                4 => 'Friday',
-                5 => 'Saturday',
-                6 => 'Sunday'
+                0 => 'Segunda-feira',
+                1 => 'Terça-feira',
+                2 => 'Quarta-feira',
+                3 => 'Quinta-feira',
+                4 => 'Sexta-feira',
+                5 => 'Sábado',
+                6 => 'Domingo'
             ],
-            'YES' => 'Yes',
-            'NO' => 'No',
+            'YES' => 'Sim',
+            'NO' => 'Não',
             'CRON' => [
-                'EVERY' => 'every',
-                'EVERY_HOUR' => 'every hour',
-                'EVERY_MINUTE' => 'every minute',
-                'EVERY_DAY_OF_WEEK' => 'every day of the week',
-                'EVERY_DAY_OF_MONTH' => 'every day of the month',
-                'EVERY_MONTH' => 'every month',
-                'TEXT_PERIOD' => 'Every <b />',
-                'TEXT_MINS' => ' at <b /> minute(s) past the hour',
-                'TEXT_TIME' => ' at <b />:<b />',
-                'TEXT_DOW' => ' on <b />',
-                'TEXT_MONTH' => ' of <b />',
-                'TEXT_DOM' => ' on <b />',
-                'ERROR1' => 'The tag %s is not supported!',
-                'ERROR2' => 'Bad number of elements',
-                'ERROR3' => 'The jquery_element should be set into jqCron settings',
-                'ERROR4' => 'Unrecognized expression'
+                'EVERY' => 'a cada',
+                'EVERY_HOUR' => 'a cada hora',
+                'EVERY_MINUTE' => 'a cada minuto',
+                'EVERY_DAY_OF_WEEK' => 'a cada dia da semana',
+                'EVERY_DAY_OF_MONTH' => 'a cada dia do mês',
+                'EVERY_MONTH' => 'a cada mês',
+                'TEXT_PERIOD' => 'A cada <b />',
+                'TEXT_MINS' => ' às <b /> minuto(s) após a hora',
+                'TEXT_TIME' => ' às <b />:<b />',
+                'TEXT_DOW' => ' no <b />',
+                'TEXT_MONTH' => ' de <b />',
+                'TEXT_DOM' => ' no <b />',
+                'ERROR1' => 'A tag %s não é suportada!',
+                'ERROR2' => 'Número incorreto de elementos',
+                'ERROR3' => 'O jquery_element deve ser definido nas configurações do jqCron',
+                'ERROR4' => 'Expressão não reconhecida'
             ]
         ]
     ]

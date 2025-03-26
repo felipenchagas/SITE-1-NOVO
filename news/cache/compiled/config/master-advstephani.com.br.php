@@ -1,13 +1,17 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1740079003,
-    'checksum' => '098f748dc5e7546fe2eaaad31ea64be8',
+    'timestamp' => 1742943743,
+    'checksum' => '9fbb515f7d0b8f14488b41a02b6960ef',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1740077586
+            ],
+            'plugins/social-seo-metatags' => [
+                'file' => 'user/config/plugins/social-seo-metatags.yaml',
+                'modified' => 1740588281
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -19,11 +23,19 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1740078933
+                'modified' => 1742943742
+            ],
+            'themes/agency' => [
+                'file' => 'user/config/themes/agency.yaml',
+                'modified' => 1740156324
+            ],
+            'themes/deliver' => [
+                'file' => 'user/config/themes/deliver.yaml',
+                'modified' => 1740157222
             ],
             'themes/quark' => [
                 'file' => 'user/config/themes/quark.yaml',
-                'modified' => 1740079003
+                'modified' => 1740156361
             ],
             'versions' => [
                 'file' => 'user/config/versions.yaml',
@@ -61,6 +73,10 @@ return [
             ]
         ],
         'user/plugins' => [
+            'plugins/themer' => [
+                'file' => 'user/plugins/themer/themer.yaml',
+                'modified' => 1468982548
+            ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1740076251
@@ -85,13 +101,17 @@ return [
                 'file' => 'user/plugins/language-selector/language-selector.yaml',
                 'modified' => 1542939398
             ],
+            'plugins/seo' => [
+                'file' => 'user/plugins/seo/seo.yaml',
+                'modified' => 1536894020
+            ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
                 'modified' => 1740076249
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1740076254
+                'modified' => 1742576858
             ],
             'plugins/flex-objects' => [
                 'file' => 'user/plugins/flex-objects/flex-objects.yaml',
@@ -101,7 +121,31 @@ return [
         'user/themes' => [
             'themes/quark' => [
                 'file' => 'user/themes/quark/quark.yaml',
-                'modified' => 1740076254
+                'modified' => 1742943734
+            ],
+            'themes/appi' => [
+                'file' => 'user/themes/appi/appi.yaml',
+                'modified' => 1740152040
+            ],
+            'themes/antimatter' => [
+                'file' => 'user/themes/antimatter/antimatter.yaml',
+                'modified' => 1740154373
+            ],
+            'themes/afterburner2' => [
+                'file' => 'user/themes/afterburner2/afterburner2.yaml',
+                'modified' => 1740154854
+            ],
+            'themes/agency' => [
+                'file' => 'user/themes/agency/agency.yaml',
+                'modified' => 1740156281
+            ],
+            'themes/bones' => [
+                'file' => 'user/themes/bones/bones.yaml',
+                'modified' => 1740157165
+            ],
+            'themes/deliver' => [
+                'file' => 'user/themes/deliver/deliver.yaml',
+                'modified' => 1740590017
             ]
         ]
     ],
@@ -139,9 +183,120 @@ return [
                         'path' => 'user/themes/quark/images/logo/simbolo.png'
                     ]
                 ]
+            ],
+            'appi' => [
+                'enabled' => true
+            ],
+            'antimatter' => [
+                'enabled' => true,
+                'dropdown' => [
+                    'enabled' => false
+                ]
+            ],
+            'afterburner2' => [
+                'dropdown' => [
+                    'enabled' => false
+                ]
+            ],
+            'agency' => [
+                'enabled' => true,
+                'color' => 'blue',
+                'dropdown' => [
+                    'enabled' => false
+                ]
+            ],
+            'bones' => [
+                'enabled' => true,
+                'site_title' => [
+                    'enabled' => true
+                ],
+                'google_fonts_logo' => [
+                    'enabled' => true
+                ],
+                'fontawesome' => [
+                    'enabled' => true
+                ],
+                'google_prettify' => [
+                    'enabled' => true
+                ],
+                'dropdown' => [
+                    'enabled' => false
+                ],
+                'mobilemenu_breakpoint' => 'large',
+                'mobilemenu_position' => 'left',
+                'foundation_offcanvas_js' => [
+                    'enabled' => true
+                ],
+                'foundation_util_mediaQuery_js' => [
+                    'enabled' => true
+                ],
+                'foundation_util_motion_js' => [
+                    'enabled' => true
+                ],
+                'foundation_util_touch_js' => [
+                    'enabled' => true
+                ],
+                'foundation_util_triggers_js' => [
+                    'enabled' => true
+                ],
+                'css_bones' => [
+                    'enabled' => true
+                ],
+                'css_global_styles' => [
+                    'enabled' => true
+                ],
+                'css_grid' => [
+                    'enabled' => true
+                ],
+                'css_flex_grid' => [
+                    'enabled' => false
+                ],
+                'css_typography' => [
+                    'enabled' => true
+                ],
+                'css_button' => [
+                    'enabled' => true
+                ],
+                'css_forms' => [
+                    'enabled' => true
+                ],
+                'css_visibility_classes' => [
+                    'enabled' => true
+                ],
+                'css_float_classes' => [
+                    'enabled' => true
+                ],
+                'css_menu' => [
+                    'enabled' => true
+                ],
+                'css_off_canvas' => [
+                    'enabled' => true
+                ],
+                'css_pagination' => [
+                    'enabled' => true
+                ],
+                'css_sticky' => [
+                    'enabled' => true
+                ],
+                'css_table' => [
+                    'enabled' => true
+                ]
+            ],
+            'deliver' => [
+                'enabled' => true,
+                'dropdown' => [
+                    'enabled' => false
+                ],
+                'sticky_menu' => [
+                    'enabled' => false
+                ]
             ]
         ],
         'plugins' => [
+            'themer' => [
+                'enabled' => true,
+                'templates' => ''
+            ],
             'error' => [
                 'enabled' => true,
                 'routes' => [
@@ -304,6 +459,15 @@ return [
                 'button_display' => 'default',
                 'select_display' => 'default'
             ],
+            'seo' => [
+                'enabled' => true,
+                'article' => true,
+                'restaurant' => true,
+                'event' => true,
+                'organization' => true,
+                'musicevent' => true,
+                'person' => true
+            ],
             'admin' => [
                 'enabled' => true,
                 'route' => '/admin',
@@ -424,6 +588,64 @@ return [
                     0 => 'blueprints://flex-objects/pages.yaml',
                     1 => 'blueprints://flex-objects/user-accounts.yaml',
                     2 => 'blueprints://flex-objects/user-groups.yaml'
+                ]
+            ],
+            'social-seo-metatags' => [
+                'enabled' => true,
+                'seo' => [
+                    'robots' => 'index_follow',
+                    'length' => 20,
+                    'taxonomy' => [
+                        'enabled' => true
+                    ],
+                    'page_content' => [
+                        'enabled' => false
+                    ],
+                    'breadcrumb' => false,
+                    'keywords' => [
+                        'taxonomy' => [
+                            'enabled' => true
+                        ],
+                        'page_content' => [
+                            'enabled' => true
+                        ],
+                        'length' => 20
+                    ]
+                ],
+                'quote' => [
+                    'convert_simple' => true
+                ],
+                'image' => [
+                    'use_cache' => true
+                ],
+                'social_pages' => [
+                    'pages' => [
+                        'twitter' => [
+                            'enabled' => true,
+                            'type' => 'summary',
+                            'username' => NULL
+                        ],
+                        'facebook' => [
+                            'opengraph' => [
+                                'enabled' => true
+                            ],
+                            'insights' => [
+                                'enabled' => false,
+                                'appid' => '1234567890'
+                            ]
+                        ]
+                    ]
+                ],
+                'default' => [
+                    'image' => [
+                        'user/assets/images/Wudi9AJrVgOfSEM.png' => [
+                            'name' => 'Wudi9AJrVgOfSEM.png',
+                            'full_path' => 'logotipo.png',
+                            'type' => 'image/png',
+                            'size' => 240907,
+                            'path' => 'user/assets/images/Wudi9AJrVgOfSEM.png'
+                        ]
+                    ]
                 ]
             ]
         ],
@@ -3908,7 +4130,7 @@ node_modules'
                 'dirs' => [
                     0 => 'page://'
                 ],
-                'theme' => 'quark',
+                'theme' => 'deliver',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/u576495821/domains/advstephani.com.br/public_html/news/user/config/themes/quark.yaml',
-    'modified' => 1740079003,
+    'modified' => 1740156361,
     'size' => 682,
     'data' => [
         'enabled' => true,
