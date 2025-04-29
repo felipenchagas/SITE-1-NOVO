@@ -124,6 +124,19 @@ class __TwigTemplate_f9a374307fe85e5fa50d8e43975d65b514b8689db12060f9b8211d9e4c6
         $this->displayBlock('bottom', $context, $blocks);
         // line 111
         echo "
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
 </body>
 </html>
 ";
@@ -518,6 +531,19 @@ class __TwigTemplate_f9a374307fe85e5fa50d8e43975d65b514b8689db12060f9b8211d9e4c6
     {{ assets.js('bottom')|raw }}
 {% endblock %}
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
 </body>
 </html>
 ", "partials/base.html.twig", "/home/u576495821/domains/advstephani.com.br/public_html/news/user/themes/quark/templates/partials/base.html.twig");

@@ -26,5 +26,18 @@
             <h5>For further details please review your <code>logs/</code> folder, or enable displaying of errors in your system configuration.</h5>
         </div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
 </body>
 </html>

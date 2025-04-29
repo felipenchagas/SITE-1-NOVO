@@ -180,6 +180,19 @@ class __TwigTemplate_5d4b775bdd5ec2301f9c018131a2843e2df2cf7f2affd79b7dc684e9ddb
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/mmenu738e.js?ver=1733679066\" id=\"attorna-mmenu-js\" data-rocket-defer defer></script>
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/jquery.superfish738e.js?ver=1733679066\" id=\"jquery-superfish-js\" data-rocket-defer defer></script>
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/script-core738e.js?ver=1733679066\" id=\"attorna-script-core-js\" data-rocket-defer defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
 </body>
 </html>
 ";
@@ -927,6 +940,19 @@ class __TwigTemplate_5d4b775bdd5ec2301f9c018131a2843e2df2cf7f2affd79b7dc684e9ddb
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/mmenu738e.js?ver=1733679066\" id=\"attorna-mmenu-js\" data-rocket-defer defer></script>
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/jquery.superfish738e.js?ver=1733679066\" id=\"jquery-superfish-js\" data-rocket-defer defer></script>
       <script data-minify=\"1\" type=\"text/javascript\" src=\"https://advstephani.com.br/wp-content/cache/min/1/attorna/demo2/wp-content/themes/attorna/js/script-core738e.js?ver=1733679066\" id=\"attorna-script-core-js\" data-rocket-defer defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
 </body>
 </html>
 ", "partials/base.html.twig", "/home/u576495821/domains/advstephani.com.br/public_html/news/user/themes/deliver/templates/partials/base.html.twig");

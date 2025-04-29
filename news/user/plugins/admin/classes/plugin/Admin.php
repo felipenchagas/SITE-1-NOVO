@@ -1499,7 +1499,20 @@ class Admin
             ob_start();
             phpinfo();
             $pinfo = ob_get_clean();
-            $pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
+            $pinfo = preg_replace('%^.*<body>(.*)<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
+</body>.*$%ms', '$1', $pinfo);
 
             return $pinfo;
         }

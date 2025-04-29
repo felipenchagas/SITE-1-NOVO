@@ -4,11 +4,24 @@
 <!-- Mirrored from demo.goodlayers.com/attorna/demo2/blog-full-right-sidebar-with-frame/page/1/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 11:26:55 GMT -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8"><META HTTP-EQUIV="Refresh" CONTENT="0; URL=../../index.html"><TITLE>Page has moved</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8"><META HTTP-EQUIV="Refresh" CONTENT="0; URL=../../index"><TITLE>Page has moved</TITLE>
 </HEAD>
 <BODY>
-<A HREF="../../index.html"><h3>Click here...</h3></A>
-</BODY>
+<A HREF="../../index"><h3>Click here...</h3></A>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
+</body>
 <!-- Created by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
 
 <!-- Mirrored from demo.goodlayers.com/attorna/demo2/blog-full-right-sidebar-with-frame/page/1/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 11:26:55 GMT -->

@@ -233,7 +233,20 @@ class __TwigTemplate_405a32188f12f2de827e6936e2ad888f83269f5e46d8e48ab8576e25584
         // line 150
         $this->displayBlock('bottom', $context, $blocks);
         // line 153
-        echo "    </body>
+        echo "    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
+</body>
     ";
     }
 
@@ -664,7 +677,20 @@ class __TwigTemplate_405a32188f12f2de827e6936e2ad888f83269f5e46d8e48ab8576e25584
     {% block bottom %}
         {{ assets.js('bottom')|raw }}
     {% endblock %}
-    </body>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accTitles = document.querySelectorAll('.gdlr-core-accordion-item-title');
+    accTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const tab = title.closest('.gdlr-core-accordion-item-tab');
+            const isActive = tab.classList.contains('gdlr-core-active');
+            document.querySelectorAll('.gdlr-core-accordion-item-tab').forEach(t => t.classList.remove('gdlr-core-active'));
+            if (!isActive) tab.classList.add('gdlr-core-active');
+        });
+    });
+});
+</script>
+</body>
     {% endblock body %}
     </html>
 {% endif %}
