@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  
+  <title>Política de Privacidade - Jonas Stephâni Advocacia</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1, h2, h3 { color: #2c2c2c; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin-left: 20px; }
+    .small { font-size: 0.9em; color: #666; }
+  </style>
+<link rel="stylesheet" href="assets/cc-banner.css?v=7.0">
+<script>
+  function loadGTM() {
+    var d = document, w = window, dl = 'dataLayer';
+    // 1) carrega o container do GTM
+    w[dl] = w[dl] || [];
+    w[dl].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = d.createElement('script');
+    s.async = true;
+    s.src   = 'https://www.googletagmanager.com/gtm.js?id=GTM-MBK9H7F3';
+    d.head.appendChild(s);
+
+    // 2) carrega o gtag.js **após** consentimento
+    var s2 = d.createElement('script');
+    s2.async = true;
+    s2.src   = 'https://www.googletagmanager.com/gtag/js?id=AW-17298490145';
+    d.head.appendChild(s2);
+
+    // 3) configura o gtag somente quando estiver carregado
+    s2.onload = function() {
+      w[dl] = w[dl] || [];
+      function gtag(){ w[dl].push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-17298490145');
+    };
+  }
+</script></head>
+<body>
+  <div class="container">
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: 08 de julho de 2025</p>
+    <p>Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos seus dados pessoais quando você acessa nosso site </p>
+    <h2>1. Quem somos</h2>
+    <p>Este site é operado por <strong>Jonas Stephâni Advocacia</strong>, com sede em Rua Herbert Trapp, 2866 – Apto 5, Piraquara – PR, CEP 83311-170. Nosso CNPJ: XX.XXX.XXX/0001-XX.</p>
+    <h2>2. Dados que coletamos</h2>
+    <ul>
+      <li><strong>Informações de contato:</strong> nome, e-mail, telefone, cidade e mensagem enviadas via formulário.</li>
+      <li><strong>Dados de navegação:</strong> endereço IP, tipo de navegador, páginas visitadas e tempo de permanência.</li>
+      <li><strong>Cookies e tecnologias semelhantes:</strong> para melhorar a experiência e análise de tráfego.</li>
+    </ul>
+    <h2>3. Como coletamos</h2>
+    <ul>
+      <li>Formulário de contato: quando você preenche e envia seus dados.</li>
+      <li>Cookies e scripts de análise (ex.: Google Analytics, Tag Manager).</li>
+      <li>Registros de acesso do servidor.</li>
+    </ul>
+    <h2>4. Finalidades do tratamento</h2>
+    <p>Utilizamos seus dados para:</p>
+    <ul>
+      <li>Responder às suas solicitações de contato.</li>
+      <li>Enviar informações e esclarecimentos sobre nossos serviços.</li>
+      <li>Melhorar a experiência de navegação e personalizar conteúdos.</li>
+      <li>Elaborar relatórios estatísticos e de desempenho do site.</li>
+    </ul>
+    <h2>5. Compartilhamento de dados</h2>
+    <p>Podemos compartilhar seus dados com:</p>
+    <ul>
+      <li>Plataformas de e-mail marketing e CRM, para gestão de contatos.</li>
+      <li>Serviços de hospedagem e segurança do site.</li>
+      <li>Google LLC e fornecedores de análise para relatórios.</li>
+    </ul>
+    <h2>6. Cookies e rastreamento</h2>
+    <p>Utilizamos cookies próprios e de terceiros. Você pode desativar cookies pelo seu navegador, mas isso pode afetar funcionalidades do site.</p>
+    <h2>7. Seus direitos</h2>
+    <p>Você tem direito de:</p>
+    <ul>
+      <li>Solicitar acesso, correção ou exclusão de seus dados.</li>
+      <li>Retirar seu consentimento a qualquer momento.</li>
+      <li>Portar seus dados para outro fornecedor.</li>
+      <li>Apresentar reclamação à autoridade de proteção de dados (ANPD).</li>
+    </ul>
+    <h2>8. Segurança</h2>
+    <p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+    <h2>9. Alterações nesta política</h2>
+    <p>Podemos atualizar esta Política de Privacidade periodicamente. A data de “última atualização” será revisada no topo do documento.</p>
+    <h2>10. Contato</h2>
+    <p>Se você tiver dúvidas ou desejar exercer seus direitos, entre em contato:</p>
+    <p><strong>E-mail:</strong> <a href="mailto:contato@advstephani.com.br">contato@advstephani.com.br</a><br>
+    <strong>Telefone:</strong> +55 41 99276-0819</p>
+    <p class="small">Esta Política de Privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018).</p>
+  </div>
+<script>
+  const COOKIE_NAME = 'cookies_aceitos';
+
+  // utilitário simples
+  function hasConsent() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME));
+  }
+
+  function giveConsent() {
+    // grava por 1 ano
+    document.cookie = COOKIE_NAME + "=1; path=/; max-age=" + 60*60*24*365;
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  }
+
+  // se já houve consentimento em visita anterior, carrega GTM direto e esconde o banner
+  if (hasConsent()) {
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  } else {
+    // banner visível e botão aguardando clique
+    document.getElementById('accept-cookies').addEventListener('click', giveConsent);
+  }
+</script>
+</body>
+</html>

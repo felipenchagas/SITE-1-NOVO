@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="no-js">
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-   <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBK9H7F3');</script>
+   
+   <head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 <!-- End Google Tag Manager -->
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="format-detection" content="telephone=no">
       <!-- Prevenção de Cache -->
       <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -221,84 +215,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script type="text/javascript" src="../wp-includes/js/jquery/jquery-migrate.min5589.js" id="jquery-migrate-js"></script>
       <script type="text/javascript" src="../wp-content/plugins/revslider/sr6/assets/js/rbtools.min7a23.js" async id="tp-tools-js"></script>
       <script type="text/javascript" src="../wp-content/plugins/revslider/sr6/assets/js/rs6.min7a23.js" async id="revmin-js"></script>
-      <script>function setREVStartSize(e){
-         //window.requestAnimationFrame(function() {
-         	window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
-         	window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
-         	try {
-         		var pw = document.getElementById(e.c).parentNode.offsetWidth,
-         			newh;
-         		pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
-         		e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
-         		e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
-         		e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
-         		e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
-         		e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
-         		e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
-         		e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
-         		if(e.layout==="fullscreen" || e.l==="fullscreen")
-         			newh = Math.max(e.mh,window.RSIH);
-         		else{
-         			e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-         			for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
-         			e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
-         			e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-         			for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
-         								
-         			var nl = new Array(e.rl.length),
-         				ix = 0,
-         				sl;
-         			e.tabw = e.tabhide>=pw ? 0 : e.tabw;
-         			e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
-         			e.tabh = e.tabhide>=pw ? 0 : e.tabh;
-         			e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
-         			for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
-         			sl = nl[0];
-         			for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
-         			var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
-         			newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
-         		}
-         		var el = document.getElementById(e.c);
-         		if (el!==null && el) el.style.height = newh+"px";
-         		el = document.getElementById(e.c+"_wrapper");
-         		if (el!==null && el) {
-         			el.style.height = newh+"px";
-         			el.style.display = "block";
-         		}
-         	} catch(e){
-         		console.log("Failure at Presize of Slider:" + e)
-         	}
-         //});
-          };
-      </script>
-	  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11049151804"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-11049151804');
+<link rel="stylesheet" href="../whatsapp.css">
+<script>
+  function loadGTM() {
+    var d = document, w = window, dl = 'dataLayer';
+    // 1) carrega o container do GTM
+    w[dl] = w[dl] || [];
+    w[dl].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = d.createElement('script');
+    s.async = true;
+    s.src   = 'https://www.googletagmanager.com/gtm.js?id=GTM-MBK9H7F3';
+    d.head.appendChild(s);
+
+    // 2) carrega o gtag.js **após** consentimento
+    var s2 = d.createElement('script');
+    s2.async = true;
+    s2.src   = 'https://www.googletagmanager.com/gtag/js?id=AW-17298490145';
+    d.head.appendChild(s2);
+
+    // 3) configura o gtag somente quando estiver carregado
+    s2.onload = function() {
+      w[dl] = w[dl] || [];
+      function gtag(){ w[dl].push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-17298490145');
+    };
+  }
 </script>
-<link rel="stylesheet" href="../whatsapp.css"></head>
+<link rel="stylesheet" href="../assets/cc-banner.css?v=7.0">
+
+</head>
    <body
         class="home page-template-default page page-id-2039 theme-attorna gdlr-core-body woocommerce-no-js attorna-body attorna-body-front attorna-full attorna-with-sticky-navigation attorna-blockquote-style-1 gdlr-core-link-to-lightbox"
-        data-home-url="#"
     >
-<!-- Botão e Balão -->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBK9H7F3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<a href="https://wa.me/5541992760819" class="zap-glass" target="_blank" aria-label="Fale com um advogado">
+
+  <!-- OVERLAY DE COOKIES -->
+<div id="cookie-consent">
+  <div class="consent-box">
+    <p>Este site utiliza cookies para melhorar sua experiência. Ao clicar em “Aceito” você concorda com nossa Política de Privacidade.</p>
+    <button id="accept-cookies">Aceito</button>
+  </div>
+</div><a href="https://wa.me/5541992760819" class="zap-glass" target="_blank" aria-label="Fale com um advogado">
    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
 </a>
 <div class="zap-msg-bubble">💬 Precisa de ajuda jurídica?<br><strong>Fale com um advogado agora mesmo!</strong></div>
-      <!-- Botão e Balão -->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBK9H7F3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 
         <div class="attorna-mobile-header-wrap">
             <div class="attorna-mobile-header attorna-header-background attorna-style-slide attorna-sticky-mobile-navigation" id="attorna-mobile-header">
@@ -313,19 +275,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                <div class="attorna-mobile-menu-right">
                   <div class="attorna-main-menu-search" id="attorna-mobile-top-search">
                      <i class="fa fa-search" aria-hidden="true"></i>
-                  </div>
-                  <div class="attorna-top-search-wrap">
-                     <div class="attorna-top-search-close"></div>
-                     <div class="attorna-top-search-row">
-                        <div class="attorna-top-search-cell">
-                           <form role="search" method="get" class="search-form" action="#">
-                              <input type="text" class="search-field attorna-title-font" placeholder="Buscar..." value="" name="s">
-                              <div class="attorna-top-search-submit"><i class="fa fa-search" aria-hidden="true"></i></div>
-                              <input type="submit" class="search-submit" value="Buscar">
-                              <div class="attorna-top-search-close"><i class="icon_close"></i></div>
-                           </form>
-                        </div>
-                     </div>
                   </div>
                   <div class="attorna-mobile-menu">
                      <a class="attorna-mm-menu-button attorna-mobile-menu-button attorna-mobile-button-hamburger" href="#attorna-mobile-menu" aria-label="Menu">
@@ -463,23 +412,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                               <div class="attorna-main-menu-search" id="attorna-top-search">
                                  <i class="fa fa-search"></i>
                               </div>
-                              <div class="attorna-top-search-wrap">
-                                 <div class="attorna-top-search-close"></div>
-                                 <div class="attorna-top-search-row">
-                                    <div class="attorna-top-search-cell">
-                                       <form role="search" method="get" class="search-form" action="#">
-                                          <input type="text" class="search-field attorna-title-font" placeholder="Buscar..." value="" name="s">
-                                          <div class="attorna-top-search-submit">
-                                             <i class="fa fa-search"></i>
-                                          </div>
-                                          <input type="submit" class="search-submit" value="Buscar">
-                                          <div class="attorna-top-search-close">
-                                             <i class="icon_close"></i>
-                                          </div>
-                                       </form>
-                                    </div>
-                                 </div>
-                              </div>
                            </div>
                             </div>
                             <!-- attorna-navigation -->
@@ -520,6 +452,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   style="z-index:7;font-family:'Poppins';text-transform:uppercase;">
   ADVOCACIA TRABALHISTA
 </rs-layer>
+
+
 <rs-layer
   id="slider-1-slide-1-layer-5"
   data-type="text"
@@ -534,7 +468,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   style="z-index:8;font-family:'Poppins', sans-serif; letter-spacing: 0.3px; text-shadow: 1px 1px 4px rgba(0,0,0,0.4);">
   Atendimento jurídico especializado na proteção dos direitos dos trabalhadores.
 </rs-layer>
-<a href="https://wa.me/5541992760819">
+  <!-- OVERLAY DE COOKIES -->
+<div id="cookie-consent">
+  <div class="consent-box">
+    <p>Este site utiliza cookies para melhorar sua experiência. Ao clicar em “Aceito” você concorda com nossa Política de Privacidade.</p>
+    <button id="accept-cookies">Aceito</button>
+  </div>
+</div><a href="https://wa.me/5541992760819">
   <rs-layer
     id="slider-1-slide-1-layer-7"
     class="rev-btn rev-withicon"
@@ -561,9 +501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                
               </rs-slides>
             </rs-module>
-            <script>
-              setREVStartSize({c: 'rev_slider_1_1',rl:[1240,1240,1240,480],el:[940,940,940,570],gw:[1280,1280,1280,480],gh:[940,940,940,570],type:'standard',justify:'',layout:'fullwidth',mh:"0"});if (window.RS_MODULES!==undefined && window.RS_MODULES.modules!==undefined && window.RS_MODULES.modules["revslider11"]!==undefined) {window.RS_MODULES.modules["revslider11"].once = false;window.revapi1 = undefined;if (window.RS_MODULES.checkMinimal!==undefined) window.RS_MODULES.checkMinimal()}
-            </script>
+
           </rs-module-wrap>
           <!-- END REVOLUTION SLIDER -->
         </div>
@@ -599,22 +537,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="gdlr-core-pbf-element">
                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px;">
                   <div class="gdlr-core-text-box-item-content" style="text-transform: none;">
-<p>Com ampla experiência na área do Direito do Trabalho e uma atuação exclusiva na defesa dos trabalhadores, nosso escritório oferece todo o suporte jurídico que você precisa. Entendemos os desafios e as injustiças que podem acontecer no ambiente de trabalho, por isso, nossa missão é lutar por seus direitos.</p>
- <p>Cuidamos do seu caso com a atenção e o profissionalismo que ele merece, buscando sempre a melhor solução para você. Proteja seus direitos e conte com a nossa dedicação em cada etapa do processo.</p>
+<p>Advogado inscrito na OAB/PR sob nº 115.349, com ampla experiência no Direito do Trabalho, minha atuação é dedicada exclusivamente à defesa dos trabalhadores — uma escolha feita pela busca constante por mais equilíbrio e justiça nas relações de trabalho.</p>
+ <p>
+Entendo os desafios e as angústias que podem surgir nesse ambiente, e acredito que a advocacia é a principal ferramenta para proteger sua dignidade e seus direitos. Por isso, cuido do seu caso com a atenção e o profissionalismo que ele merece, aliando técnica apurada e dedicação total em cada etapa do processo.</p>
                   </div>
                 </div>
               </div>
               <div class="gdlr-core-pbf-element">
                 <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-left-align gdlr-core-item-pdlr">
                   <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                    <img src="../wp-content/uploads/2019/02/jonas-stephani.png" alt="Jonas Stephâni" width="254" height="47" title="sign-black" />
+                    <img src="../imagens/jonas.png" alt="Jonas Stephâni" width="254" height="47" title="sign-black" />
                   </div>
                 </div>
               </div>
               <div class="gdlr-core-pbf-element">
                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                   <div class="gdlr-core-text-box-item-content" style="font-size: 11px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase;">
-                    <p>Jonas Stephâni – Advogado Especialista em Direito do Trabalho</p>
+                    <p>JONAS STEPHÂNI – ADVOGADO ESPECIALISTA EM DIREITO DO TRABALHO</p>
                   </div>
                 </div>
               </div>
@@ -933,40 +872,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="gdlr-core-pbf-element">
               <div class="gdlr-core-contact-form-7-item gdlr-core-item-pdlr gdlr-core-item-pdb">
-                <form class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate">
-                  <div class="gdlr-core-input-wrap gdlr-core-large gdlr-core-full-width gdlr-core-with-column gdlr-core-no-border">
-                    <div class="gdlr-core-column-30">
-                      <p><input type="text" name="your-name" placeholder="Seu Nome" required class="wpcf7-form-control" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc;" /></p>
-                    </div>
-                    <div class="gdlr-core-column-30">
-                      <p><input type="text" name="your-phone" placeholder="Telefone com DDD" required class="wpcf7-form-control" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc;" /></p>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="gdlr-core-column-30">
-                      <p>
-                        <select name="your-case" class="wpcf7-form-control" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc;">
-                          <option value="">Área de Atuação</option>
-                          <option value="Trabalhista" selected>Direito Trabalhista</option>
-                          <option value="Assédio Moral">Assédio Moral</option>
-                          <option value="Verbas Rescisórias">Verbas Rescisórias</option>
-                          <option value="Justa Causa Indevida">Justa Causa Indevida</option>
-                        </select>
-                      </p>
-                    </div>
-                    <div class="gdlr-core-column-30">
-                      <p><input type="email" name="your-email" placeholder="Seu E-mail" required class="wpcf7-form-control" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc;" /></p>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="gdlr-core-column-60">
-                      <p><textarea name="your-message" placeholder="Descreva seu caso trabalhista: demissão, atraso salarial, jornada excessiva..." required class="wpcf7-form-control" rows="6" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc;"></textarea></p>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="gdlr-core-column-60 gdlr-core-left-align">
-                      <p><input type="submit" value="ENVIAR" class="wpcf7-form-control wpcf7-submit gdlr-core-full" style="width: 100%; padding: 14px; background-color: #b1976b; color: #fff; border: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; cursor: pointer;" /></p>
-                    </div>
-                  </div>
-                  <div class="wpcf7-response-output" aria-hidden="true"></div>
-                </form>
+<form action="https://empresarialweb.com.br/contato/advstephani/enviar.php" method="post" novalidate
+  style="
+    max-width:700px;
+    margin:40px auto;
+    padding:20px;
+    background:rgba(255,255,255,0.9);
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    box-sizing:border-box;
+  ">
+
+  <!-- Duas colunas: Nome / Telefone / E-mail / Cidade -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+    <input
+      type="text" name="nome" placeholder="Nome*" required
+      style="
+        width:100%;
+        padding:12px 14px;
+        font-size:14px;
+        border:1px solid #ddd;
+        border-radius:4px;
+        background:#f8f8f8;
+        box-sizing:border-box;
+      "
+    />
+    <input
+      type="tel" name="telefone" placeholder="Telefone*" required
+      style="
+        width:100%;
+        padding:12px 14px;
+        font-size:14px;
+        border:1px solid #ddd;
+        border-radius:4px;
+        background:#f8f8f8;
+        box-sizing:border-box;
+      "
+    />
+    <input
+      type="email" name="email" placeholder="E-mail*" required
+      style="
+        width:100%;
+        padding:12px 14px;
+        font-size:14px;
+        border:1px solid #ddd;
+        border-radius:4px;
+        background:#f8f8f8;
+        box-sizing:border-box;
+      "
+    />
+    <input
+      type="text" name="cidade" placeholder="Cidade*" required
+      style="
+        width:100%;
+        padding:12px 14px;
+        font-size:14px;
+        border:1px solid #ddd;
+        border-radius:4px;
+        background:#f8f8f8;
+        box-sizing:border-box;
+      "
+    />
+  </div>
+
+  <!-- Mensagem full-width -->
+  <textarea
+    name="descricao" placeholder="Mensagem*" required rows="6"
+    style="
+      width:100%;
+      padding:12px 14px;
+      font-size:14px;
+      border:1px solid #ddd;
+      border-radius:4px;
+      background:#f8f8f8;
+      box-sizing:border-box;
+      margin-bottom:20px;
+      resize:vertical;
+    "
+  ></textarea>
+
+  <!-- Botão full-width -->
+  <button type="submit"
+    style="
+      display:block;
+      width:100%;
+      padding:14px;
+      font-size:16px;
+      font-weight:600;
+      color:#fff;
+      background: linear-gradient(90deg,#b08f4f,#d1ae67);
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+    "
+  >
+    Enviar
+  </button>
+
+</form>
+
               </div>
             </div>
           </div>
@@ -1668,7 +1672,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </footer>
-
+<script src="../assets/cc-banner.js?v=7.0" defer></script>
 
       <link data-minify="1" rel="stylesheet" property="stylesheet" id="rs-icon-set-fa-icon-css" href="../wp-content/cache/min/1/attorna/demo2/wp-content/plugins/revslider/sr6/assets/fonts/font-awesome/css/font-awesomec5aa.css?ver=1733679408" type="text/css" media="all" />
       <link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='../wp-content/cache/min/1/attorna/demo2/wp-content/plugins/contact-form-7/includes/css/stylesc5aa.css?ver=1733679408' type='text/css' media='all' />
@@ -1782,5 +1786,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 </script>
       <script data-minify="1" type="text/javascript" src="../wp-content/cache/min/1/attorna/demo2/wp-content/plugins/snazzy-maps/snazzymaps738e.js" id="snazzymaps-js-js" data-rocket-defer defer></script>
-   </body>
+   <script>
+  const COOKIE_NAME = 'cookies_aceitos';
+
+  // utilitário simples
+  function hasConsent() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME));
+  }
+
+  function giveConsent() {
+    // grava por 1 ano
+    document.cookie = COOKIE_NAME + "=1; path=/; max-age=" + 60*60*24*365;
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  }
+
+  // se já houve consentimento em visita anterior, carrega GTM direto e esconde o banner
+  if (hasConsent()) {
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  } else {
+    // banner visível e botão aguardando clique
+    document.getElementById('accept-cookies').addEventListener('click', giveConsent);
+  }
+</script>
+</body>
 </html>

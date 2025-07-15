@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="no-js">
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-	<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBK9H7F3');</script>
+
+	<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- End Google Tag Manager -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 		<title>Advogado Especializado em Ação Contra Plano de Saúde no Ambrósio - Tijucas do Sul | Direito à Saúde e Justiça</title>
 		<meta name="description" content="Mora no Ambrósio - Tijucas do Sul e teve atendimento ou reembolso negado? Aja rápido. Ingressamos com ação contra plano de saúde e buscamos liberação imediata do tratamento.">
 		<meta name="keywords" content="ação contra plano de saúde no Ambrósio - Tijucas do Sul, advogado plano de saúde Ambrósio - Tijucas do Sul, recusa de exame convênio Ambrósio - Tijucas do Sul, plano de saúde negativa Curitiba, justiça contra convênio Ambrósio - Tijucas do Sul">
@@ -224,9 +218,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		};
 		</script>
 		<link rel="stylesheet" href="../../whatsapp.css">
-	</head>
+	<link rel="stylesheet" href="../../assets/cc-banner.css?v=7.0">
+<script>
+  function loadGTM() {
+    var d = document, w = window, dl = 'dataLayer';
+    // 1) carrega o container do GTM
+    w[dl] = w[dl] || [];
+    w[dl].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = d.createElement('script');
+    s.async = true;
+    s.src   = 'https://www.googletagmanager.com/gtm.js?id=GTM-MBK9H7F3';
+    d.head.appendChild(s);
+
+    // 2) carrega o gtag.js **após** consentimento
+    var s2 = d.createElement('script');
+    s2.async = true;
+    s2.src   = 'https://www.googletagmanager.com/gtag/js?id=AW-17298490145';
+    d.head.appendChild(s2);
+
+    // 3) configura o gtag somente quando estiver carregado
+    s2.onload = function() {
+      w[dl] = w[dl] || [];
+      function gtag(){ w[dl].push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-17298490145');
+    };
+  }
+</script></head>
 	<body class="page-template-default page page-id-5840 gdlr-core-body attorna-body attorna-body-front attorna-full  attorna-with-sticky-navigation  attorna-blockquote-style-1 gdlr-core-link-to-lightbox">
-		<a href="https://wa.me/5541992760819" class="zap-glass" target="_blank" aria-label="Fale com um advogado especialista em plano de saúde via WhatsApp">
+		  <!-- OVERLAY DE COOKIES -->
+<div id="cookie-consent">
+  <div class="consent-box">
+    <p>Este site utiliza cookies para melhorar sua experiência. Ao clicar em “Aceito” você concorda com nossa Política de Privacidade.</p>
+    <button id="accept-cookies">Aceito</button>
+  </div>
+</div><a href="https://wa.me/5541992760819" class="zap-glass" target="_blank" aria-label="Fale com um advogado especialista em plano de saúde via WhatsApp">
 			<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp Icon" loading="lazy">
 		</a>
 		<div class="zap-msg-bubble">💬 Precisa de ajuda jurídica?<br><strong>Fale com um advogado agora mesmo!</strong></div>
@@ -750,11 +776,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<a href="#" style="margin-left:21px;">Casos</a>
 								<a href="#" style="margin-left:21px;">Sobre</a>
 								<a href="#" style="margin-left:21px;">Legal</a>
-								<a href="#" style="margin-left:21px;">Privacidade</a>
+								<a href="../../politica-de-privacidade.html" style="margin-left:21px;">Politica de privacidade</a>
 							</div>
 						</div>
 					</div>
-				</footer>
+				</footer><script src="../../assets/cc-banner.js?v=7.0" defer></script>
 			</div>
 		</div>
 		<link data-minify="1" rel='stylesheet' id='rs-plugin-settings-css' href='../../wp-content/cache/min/1/attorna/demo2/wp-content/plugins/revslider/sr6/assets/css/rs66a6a.css' type='text/css' media='all' />
@@ -776,5 +802,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			});
 		});
 		</script>
-	</body>
+	<script>
+  const COOKIE_NAME = 'cookies_aceitos';
+
+  // utilitário simples
+  function hasConsent() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME));
+  }
+
+  function giveConsent() {
+    // grava por 1 ano
+    document.cookie = COOKIE_NAME + "=1; path=/; max-age=" + 60*60*24*365;
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  }
+
+  // se já houve consentimento em visita anterior, carrega GTM direto e esconde o banner
+  if (hasConsent()) {
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  } else {
+    // banner visível e botão aguardando clique
+    document.getElementById('accept-cookies').addEventListener('click', giveConsent);
+  }
+</script>
+</body>
 </html>

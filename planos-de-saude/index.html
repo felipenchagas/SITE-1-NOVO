@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MBK9H7F3');</script>
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Advogado Especialista em Planos de Saúde | Negativa de Tratamento</title>
     <meta name="description" content="Entrou com pedido no plano e foi negado? Remédio, cirurgia ou exame recusado? Fale com um advogado especialista agora mesmo.">
     <link rel="canonical" href="https://advstephani.com.br/advogado-plano-de-saude">
@@ -217,8 +217,50 @@ textarea::placeholder {
 }
 
     </style>
-</head>
+<link rel="stylesheet" href="../assets/cc-banner.css?v=7.0">
+<script>
+  function loadGTM() {
+    var d = document, w = window, dl = 'dataLayer';
+    // 1) carrega o container do GTM
+    w[dl] = w[dl] || [];
+    w[dl].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = d.createElement('script');
+    s.async = true;
+    s.src   = 'https://www.googletagmanager.com/gtm.js?id=GTM-MBK9H7F3';
+    d.head.appendChild(s);
+
+    // 2) carrega o gtag.js **após** consentimento
+    var s2 = d.createElement('script');
+    s2.async = true;
+    s2.src   = 'https://www.googletagmanager.com/gtag/js?id=AW-17298490145';
+    d.head.appendChild(s2);
+
+    // 3) configura o gtag somente quando estiver carregado
+    s2.onload = function() {
+      w[dl] = w[dl] || [];
+      function gtag(){ w[dl].push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-17298490145');
+    };
+  }
+</script></head>
 <body class="font-sans text-dark">
+
+  <div class="whatsapp-float">
+      <!-- OVERLAY DE COOKIES -->
+<div id="cookie-consent">
+  <div class="consent-box">
+    <p>Este site utiliza cookies para melhorar sua experiência. Ao clicar em “Aceito” você concorda com nossa Política de Privacidade.</p>
+    <button id="accept-cookies">Aceito</button>
+  </div>
+</div><a href="https://wa.me/5541992760819" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <div class="whatsapp-bubble">
+      Precisa de ajuda previdenciária?<br>
+      <strong>Fale com nosso advogado!</strong>
+    </div>
+  </div>
     <!-- Header -->
     <header class="bg-light shadow-md fixed w-full top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -752,6 +794,7 @@ textarea::placeholder {
                         <li><a href="#beneficios" class="opacity-70 hover:opacity-100 hover:text-primary-light transition">Benefícios</a></li>
                         <li><a href="#faq" class="opacity-70 hover:opacity-100 hover:text-primary-light transition">Dúvidas Frequentes</a></li>
                         <li><a href="#contato" class="opacity-70 hover:opacity-100 hover:text-primary-light transition">Contato</a></li>
+						<li><a href="../politica-de-privacidade" class="opacity-70 hover:opacity-100 hover:text-primary-light transition">Politca de privacidae</a></li>
                     </ul>
                 </div>
                 
@@ -771,7 +814,7 @@ textarea::placeholder {
                 <p class="mt-2">Este site não constitui oferta de serviços jurídicos. Cada caso é único e deve ser analisado individualmente.</p>
             </div>
         </div>
-    </footer>
+    </footer><script src="../assets/cc-banner.js?v=7.0" defer></script>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/5541992760819?text=Olá,%20preciso%20de%20ajuda%20com%20meu%20plano%20de%20saúde" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg pulse" target="_blank">
@@ -854,5 +897,29 @@ textarea::placeholder {
   });
 </script>
 
+<script>
+  const COOKIE_NAME = 'cookies_aceitos';
+
+  // utilitário simples
+  function hasConsent() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME));
+  }
+
+  function giveConsent() {
+    // grava por 1 ano
+    document.cookie = COOKIE_NAME + "=1; path=/; max-age=" + 60*60*24*365;
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  }
+
+  // se já houve consentimento em visita anterior, carrega GTM direto e esconde o banner
+  if (hasConsent()) {
+    loadGTM();
+    document.getElementById('cookie-consent').style.display = 'none';
+  } else {
+    // banner visível e botão aguardando clique
+    document.getElementById('accept-cookies').addEventListener('click', giveConsent);
+  }
+</script>
 </body>
 </html>
