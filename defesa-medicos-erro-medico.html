@@ -847,29 +847,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<script>
-  const COOKIE_NAME = 'cookies_aceitos';
 
-  // utilitário simples
-  function hasConsent() {
-    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME));
-  }
-
-  function giveConsent() {
-    // grava por 1 ano
-    document.cookie = COOKIE_NAME + "=1; path=/; max-age=" + 60*60*24*365;
-    loadGTM();
-    document.getElementById('cookie-consent').style.display = 'none';
-  }
-
-  // se já houve consentimento em visita anterior, carrega GTM direto e esconde o banner
-  if (hasConsent()) {
-    loadGTM();
-    document.getElementById('cookie-consent').style.display = 'none';
-  } else {
-    // banner visível e botão aguardando clique
-    document.getElementById('accept-cookies').addEventListener('click', giveConsent);
-  }
-</script>
 </body>
 </html>
